@@ -4,28 +4,20 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { data } = req.body;
+  // 从请求头中获取 token
+  const requestToken = req.headers['authorization']?.split(' ')[1];
 
-  const url = 'https://example.com/api'; // 替换成你要请求的真实 URL
-  const token = process.env.MY_API_TOKEN; // 环境变量中读取 token
+  // 从环境变量中读取预设的 token
+  const validToken = process.env.MY_API_TOKEN;
 
-  if (!token) {
-    return res.status(500).json({ error: 'Missing token in environment variables' });
+  // 验证 token
+  if (!validToken || requestToken !== validToken) {
+    return res.status(401).json({ error: 'Invalid or missing token' });
   }
 
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-    res.status(response.status).json(result);
-  } catch (error) {
-    res.status(500).json({ error: 'Internal server error' });
-  }
+  // 返回接收到的数据（或做其他处理）
+  return res.status(200).json({
+    message: 'Authentication successful',
+    receivedData: req.body,
+  });
 }
