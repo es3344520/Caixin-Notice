@@ -1,11 +1,12 @@
 {
-  "name": "github-api",
+  "name": "my-vercel-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel preview"
   },
-  "keywords": [],
-  "license": "ISC"
+  "dependencies": {
+    "@vercel/node": "^2.0.0"
+  }
 }
