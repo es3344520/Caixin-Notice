@@ -1,9 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/github-request.js", "use": "@vercel/node" }
+    {
+      "src": "api/post-handler.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/api/github-request", "dest": "api/github-request.js" }
+    {
+      "src": "/api/post",
+      "dest": "/api/post-handler"
+    }
   ]
 }
