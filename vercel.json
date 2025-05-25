@@ -1,15 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "api/send-post.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/send-post",
-      "dest": "api/send-post.js"
-    }
+  "rewrites": [
+    { "source": "/api/data", "destination": "/" }
   ]
 }
