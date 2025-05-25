@@ -1,9 +1,10 @@
 {
-  "name": "nojs-vercel-api",
+  "name": "vercel-express-api",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Skipping custom build'",
-    "start": "vercel preview"
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
