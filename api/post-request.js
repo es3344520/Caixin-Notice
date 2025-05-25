@@ -6,8 +6,8 @@ export default async function handler(req, res) {
 
   const { data } = req.body;
 
-  const url = 'https://example.com/api'; // 替换为你要请求的目标 URL
-  const token = process.env.MY_API_TOKEN; // 从环境变量中读取 token
+  const url = 'https://example.com/api'; // 替换成你要请求的真实 URL
+  const token = process.env.MY_API_TOKEN; // 环境变量中读取 token
 
   if (!token) {
     return res.status(500).json({ error: 'Missing token in environment variables' });
