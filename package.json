@@ -1,0 +1,13 @@
+{
+  "name": "github-api-integration",
+  "version": "1.0.0",
+  "description": "A simple API to interact with GitHub's API using Vercel Serverless Functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "license": "ISC"
+}
