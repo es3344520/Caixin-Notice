@@ -1,5 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/api/data", "destination": "/" }
-  ]
+  "version": 2,
+  "public": false
 }
