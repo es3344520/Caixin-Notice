@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/post-request.js",
+      "src": "api/send-post.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/post-request",
-      "dest": "/api/post-request"
+      "src": "/api/send-post",
+      "dest": "api/send-post.js"
     }
   ]
 }
