@@ -7,7 +7,6 @@ export default function handler(req, res) {
 
   const { secret, data } = req.body;
 
-  // 从环境变量中读取验证信息
   const API_SECRET = process.env.API_SECRET;
 
   if (!API_SECRET) {
